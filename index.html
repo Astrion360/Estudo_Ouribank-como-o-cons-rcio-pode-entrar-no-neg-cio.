@@ -1,0 +1,374 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Ouribank | Diagnóstico Empresarial e Oportunidade de Consórcios</title>
+<meta name="description" content="Estudo Astrion sobre o Ouribank, seu modelo de negócios, perfil de clientes, risco de crédito e aderência estratégica a consórcios white label.">
+<style>
+:root{
+ --navy:#061738;--navy2:#0b2b61;--blue:#123f82;--gold:#c99a2e;--gold2:#e6c978;
+ --ink:#172033;--muted:#687386;--bg:#f4f6fa;--card:#fff;--line:#dde3ec;
+ --green:#08765a;--red:#b42318;--amber:#9b5b00;--shadow:0 16px 48px rgba(6,23,56,.11);--radius:21px
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);font-family:Inter,Segoe UI,Arial,sans-serif;color:var(--ink);line-height:1.58}
+a{color:inherit;text-decoration:none}
+.shell{display:grid;grid-template-columns:286px minmax(0,1fr);min-height:100vh}
+aside{position:sticky;top:0;height:100vh;overflow:auto;background:linear-gradient(180deg,#04132f,#0a2858);color:#fff;padding:22px 17px;z-index:30}
+.brand{background:#fff;color:var(--navy);border-radius:15px;padding:16px;margin-bottom:18px;text-align:center;font-weight:900;letter-spacing:4px;font-size:23px}
+.brand small{display:block;font-size:9px;letter-spacing:2px;color:#8b6b21}
+.caption{font-size:10px;text-transform:uppercase;letter-spacing:1.8px;color:var(--gold2);padding:0 9px 12px}
+nav a{display:flex;align-items:center;gap:9px;color:#dce4f0;font-size:12px;font-weight:700;padding:9px 10px;border-radius:10px;margin:2px 0}
+nav a:hover,nav a.active{background:rgba(255,255,255,.11);color:#fff}
+nav i{width:20px;height:20px;display:grid;place-items:center;background:rgba(255,255,255,.08);border-radius:6px;font-style:normal;font-size:9px}
+.side-note{margin-top:20px;border:1px solid rgba(255,255,255,.14);border-radius:13px;padding:13px;font-size:10px;color:#c2cfdf}
+main{min-width:0}
+.section{padding:70px clamp(23px,5vw,76px);border-bottom:1px solid var(--line);scroll-margin-top:8px}
+.hero{min-height:100vh;display:grid;align-items:center;color:#fff;position:relative;overflow:hidden;background:
+radial-gradient(circle at 82% 18%,rgba(201,154,46,.31),transparent 25%),
+radial-gradient(circle at 62% 87%,rgba(36,101,186,.28),transparent 32%),
+linear-gradient(135deg,#03122d,#0a2a60 61%,#061738)}
+.hero:before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);background-size:56px 56px}
+.hero-inner{position:relative;max-width:1180px}
+.eyebrow{text-transform:uppercase;letter-spacing:3px;font-size:11px;font-weight:850;color:var(--gold2);margin-bottom:17px}
+h1{font-size:clamp(43px,6.3vw,84px);line-height:1;letter-spacing:-3px;margin:0 0 23px;max-width:1100px}
+h2{font-size:clamp(31px,4.2vw,53px);line-height:1.06;letter-spacing:-1.6px;color:var(--navy);margin:0 0 16px}
+h3{font-size:20px;line-height:1.2;color:var(--navy);margin:0 0 10px}
+.lead{font-size:clamp(17px,2vw,23px);max-width:950px;color:#e2eaf4}
+.pills{display:flex;gap:9px;flex-wrap:wrap;margin:28px 0}
+.pill{padding:9px 14px;border-radius:99px;border:1px solid rgba(255,255,255,.18);background:rgba(255,255,255,.08);font-size:12px;font-weight:800}
+.pill.gold{background:var(--gold);color:var(--navy);border-color:var(--gold)}
+.hero-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px;margin-top:35px}
+.hero-card{background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.14);border-radius:18px;padding:20px;backdrop-filter:blur(8px)}
+.hero-card b{display:block;color:var(--gold2);font-size:22px;margin-bottom:5px}
+.hero-card span{font-size:12px;color:#dce4ef}
+.head{max-width:940px;margin-bottom:30px}
+.head p{font-size:17px;color:var(--muted);margin:0}
+.grid2,.grid3,.grid4,.grid5{display:grid;gap:18px}
+.grid2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.grid3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.grid4{grid-template-columns:repeat(4,minmax(0,1fr))}
+.grid5{grid-template-columns:repeat(5,minmax(0,1fr))}
+.card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:23px;box-shadow:var(--shadow)}
+.card p{color:var(--muted);margin:0}
+.kpi{border-top:5px solid var(--gold)}
+.kpi small{display:block;color:var(--muted);font-weight:750}
+.kpi strong{display:block;color:var(--navy);font-size:29px;line-height:1.05;margin:11px 0 7px}
+.kpi em{font-size:11px;font-style:normal;font-weight:850}
+.pos{color:var(--green)}.neg{color:var(--red)}.warn{color:var(--amber)}
+.callout{background:linear-gradient(135deg,var(--navy),var(--navy2));color:#fff;border-radius:var(--radius);padding:25px;box-shadow:var(--shadow)}
+.callout h3{color:#fff}.callout p{color:#dce6f2;margin:0}
+.table-wrap{overflow:auto;background:#fff;border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow)}
+table{width:100%;border-collapse:collapse;min-width:760px}
+th,td{padding:13px 15px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top;font-size:12px}
+th{background:var(--navy);color:#fff;text-transform:uppercase;letter-spacing:.7px;font-size:10px}
+tr:last-child td{border-bottom:none}
+.tag{display:inline-block;padding:5px 8px;border-radius:99px;font-size:10px;font-weight:850}
+.tag.public{background:#e7f0ff;color:#17488e}.tag.missing{background:#fff0d3;color:#875900}.tag.request{background:#e4f5ee;color:#08765a}
+.flow{display:grid;grid-template-columns:repeat(6,1fr);gap:12px}
+.step{background:#fff;border:1px solid var(--line);border-radius:16px;padding:18px}
+.step b{display:block;color:var(--navy);margin-bottom:6px}
+.step span{font-size:12px;color:var(--muted)}
+.score{position:relative}
+.score .n{font-size:39px;color:var(--navy);font-weight:900}
+.bar{height:8px;background:#edf0f5;border-radius:99px;overflow:hidden;margin:12px 0}
+.bar span{display:block;height:100%;background:linear-gradient(90deg,var(--blue),var(--gold));border-radius:99px}
+.risk-box{border-left:5px solid var(--gold)}
+.timeline{position:relative;padding-left:34px}
+.timeline:before{content:"";position:absolute;left:10px;top:5px;bottom:5px;width:2px;background:#d4dce8}
+.t{position:relative;margin-bottom:20px}
+.t:before{content:"";position:absolute;left:-31px;top:2px;width:15px;height:15px;border:4px solid var(--gold);background:#fff;border-radius:50%}
+.t b{display:block;color:var(--navy)}.t span{font-size:12px;color:var(--muted)}
+.disclaimer{background:#fff8e7;border:1px solid #ecd58d;color:#6a5317;border-radius:15px;padding:17px;font-size:12px}
+.sources{font-size:12px;color:var(--muted)}
+.sources li{margin:8px 0}
+.footer{background:var(--navy);color:#fff;text-align:center}
+.footer h2{color:#fff}.footer p{color:#c9d4e2}
+@media(max-width:1100px){
+ .shell{display:block}aside{position:relative;height:auto}nav{display:grid;grid-template-columns:repeat(4,1fr)}
+ .hero{min-height:auto;padding-top:100px;padding-bottom:100px}.grid5,.grid4,.hero-grid,.flow{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:720px){
+ .section{padding:52px 17px}nav{grid-template-columns:repeat(2,1fr)}h1{letter-spacing:-1.7px}
+ .grid2,.grid3,.grid4,.grid5,.hero-grid,.flow{grid-template-columns:1fr}
+}
+@media print{
+ aside{display:none!important}.shell{display:block}.section{padding:28px;break-inside:avoid}.hero{min-height:auto;background:#061738!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+ .card,.table-wrap{box-shadow:none}
+}
+</style>
+</head>
+<body>
+<div class="shell">
+<aside>
+ <div class="brand">ASTRION<small>ASSESSORIA</small></div>
+ <div class="caption">Ouribank · Diagnóstico empresarial</div>
+ <nav>
+  <a href="#inicio"><i>01</i>Visão executiva</a>
+  <a href="#empresa"><i>02</i>Quem é o Ouribank</a>
+  <a href="#modelo"><i>03</i>Modelo de negócios</a>
+  <a href="#financeiro"><i>04</i>Desempenho</a>
+  <a href="#clientes"><i>05</i>Clientes e canais</a>
+  <a href="#credito"><i>06</i>Crédito</a>
+  <a href="#inadimplencia"><i>07</i>Inadimplência</a>
+  <a href="#risco"><i>08</i>Risco e governança</a>
+  <a href="#consorcio"><i>09</i>Entrada do consórcio</a>
+  <a href="#segmentacao"><i>10</i>Públicos prioritários</a>
+  <a href="#arquitetura"><i>11</i>Arquitetura operacional</a>
+  <a href="#economia"><i>12</i>Economia estratégica</a>
+  <a href="#riscos"><i>13</i>Riscos da parceria</a>
+  <a href="#diligencia"><i>14</i>Due diligence</a>
+  <a href="#roadmap"><i>15</i>Roadmap</a>
+  <a href="#conclusao"><i>16</i>Conclusão</a>
+ </nav>
+ <div class="side-note">Sem simuladores. O foco é compreender a empresa, a qualidade do relacionamento, o risco de crédito e a forma adequada de inserir consórcios no negócio.</div>
+</aside>
+
+<main>
+<section class="section hero" id="inicio">
+ <div class="hero-inner">
+  <div class="eyebrow">Diagnóstico empresarial e oportunidade estratégica</div>
+  <h1>Ouribank: como o consórcio pode entrar no negócio.</h1>
+  <p class="lead">Uma análise da instituição, do modelo de câmbio e serviços financeiros, do perfil da base, da exposição a crédito e da aderência de uma operação plug-and-play com a EZZE Consórcios by Âncora.</p>
+  <div class="pills"><span class="pill gold">850 mil+ clientes atendidos</span><span class="pill">R$ 160 bi em câmbio em 2025</span><span class="pill">2,3 milhões de operações</span><span class="pill">Rating A.br</span><span class="pill">Basileia 15,83%</span></div>
+  <div class="hero-grid">
+   <div class="hero-card"><b>Core</b><span>Câmbio, pagamentos internacionais, proteção cambial, crédito e serviços para empresas.</span></div>
+   <div class="hero-card"><b>Vantagem</b><span>Relacionamento consultivo, base empresarial e rede com mais de 650 correspondentes.</span></div>
+   <div class="hero-card"><b>Consórcio</b><span>Produto complementar para CAPEX planejado, sem transformar o banco em administradora.</span></div>
+  </div>
+ </div>
+</section>
+
+<section class="section" id="empresa">
+ <div class="head"><div class="eyebrow">02 · Quem é o Ouribank</div><h2>Um banco especializado que cresceu a partir de câmbio e relacionamento empresarial.</h2><p>O posicionamento atual combina a tradição do Banco Ourinvest com uma marca orientada a soluções completas, integrações e expansão internacional de clientes.</p></div>
+ <div class="grid4">
+  <div class="card"><h3>Especialização</h3><p>Referência em câmbio, remessas, pagamentos internacionais, hedge e suporte a operações de comércio exterior.</p></div>
+  <div class="card"><h3>Atuação ampliada</h3><p>Crédito e garantias, real estate, contas, administração fiduciária, gestão de recursos e hub de soluções.</p></div>
+  <div class="card"><h3>Modelo relacional</h3><p>Atendimento especializado para empresas, fintechs, remessadoras, marketplaces, corretoras e instituições financeiras.</p></div>
+  <div class="card"><h3>Capilaridade</h3><p>Rede superior a 650 correspondentes cambiais, capaz de originar e atender clientes em diferentes regiões.</p></div>
+ </div>
+</section>
+
+<section class="section" id="modelo">
+ <div class="head"><div class="eyebrow">03 · Modelo de negócios</div><h2>Receitas ligadas à atividade internacional, serviços e intermediação financeira.</h2></div>
+ <div class="grid3">
+  <div class="card"><h3>Câmbio e pagamentos</h3><p>Volume transacionado, spreads cambiais, tarifas, remessas e liquidação de operações internacionais.</p></div>
+  <div class="card"><h3>Crédito e trade finance</h3><p>Financiamento associado ao comércio exterior, garantias e operações estruturadas para clientes empresariais.</p></div>
+  <div class="card"><h3>Serviços financeiros</h3><p>Contas, custódia, administração fiduciária, gestão, real estate e integrações por API.</p></div>
+ </div>
+ <div class="callout" style="margin-top:20px"><h3>Leitura para o consórcio</h3><p>O consórcio não deve tentar substituir o câmbio nem o trade finance. Ele entra como solução complementar de aquisição planejada de ativos, especialmente quando a urgência é menor e o cliente busca organizar CAPEX futuro.</p></div>
+</section>
+
+<section class="section" id="financeiro">
+ <div class="head"><div class="eyebrow">04 · Escala e desempenho</div><h2>Indicadores oficiais apontam forte crescimento, rentabilidade e capital regulatório confortável.</h2></div>
+ <div class="grid5">
+  <div class="card kpi"><small>Clientes atendidos</small><strong>850 mil+</strong><em class="pos">Escala declarada</em></div>
+  <div class="card kpi"><small>Operações de câmbio 2025</small><strong>2,3 mi+</strong><em class="pos">Alta recorrência</em></div>
+  <div class="card kpi"><small>Volume cambial 2025</small><strong>R$ 160 bi+</strong><em class="pos">Relevância operacional</em></div>
+  <div class="card kpi"><small>Receitas 2025</small><strong>R$ 1,4 bi+</strong><em class="pos">Dado institucional</em></div>
+  <div class="card kpi"><small>ROAE</small><strong>91,1%</strong><em class="pos">Rentabilidade elevada</em></div>
+ </div>
+ <div class="grid3" style="margin-top:18px">
+  <div class="card kpi"><small>Ativos</small><strong>R$ 3,7 bi</strong><p>Valor informado na página institucional atual.</p></div>
+  <div class="card kpi"><small>Índice de Basileia</small><strong>15,83%</strong><p>Indicador de capital acima do mínimo regulatório, sujeito à composição prudencial.</p></div>
+  <div class="card kpi"><small>Rating</small><strong>A.br</strong><p>Classificação Moody’s indicada pelo banco.</p></div>
+ </div>
+ <div class="disclaimer" style="margin-top:18px">Os números institucionais atuais podem diferir de bases históricas ou de demonstrações individuais. Para análise contratual, deve-se conciliar o site institucional, o BRGAAP 2025, o IF.Data e o conglomerado prudencial.</div>
+</section>
+
+<section class="section" id="clientes">
+ <div class="head"><div class="eyebrow">05 · Clientes e canais</div><h2>A base é ampla, mas não deve ser confundida com 850 mil empresas elegíveis.</h2><p>“Clientes atendidos” pode incluir pessoas, empresas, usuários ocasionais, clientes históricos e participantes de operações pontuais. O consórcio exige identificar a base ativa, recorrente, consentida e economicamente elegível.</p></div>
+ <div class="table-wrap">
+  <table>
+   <thead><tr><th>Cluster</th><th>Relacionamento atual</th><th>Sinal de necessidade</th><th>Aderência a consórcio</th></tr></thead>
+   <tbody>
+    <tr><td>Importadores</td><td>Câmbio, FINIMP, pagamentos e proteção.</td><td>Máquinas, equipamentos, veículos e imóveis operacionais.</td><td>Muito alta para CAPEX planejado.</td></tr>
+    <tr><td>Exportadores</td><td>ACC/ACE, recebimentos, hedge e contas.</td><td>Expansão produtiva, armazenagem e frota.</td><td>Muito alta.</td></tr>
+    <tr><td>Fintechs e remessadoras</td><td>Infraestrutura, liquidação, APIs e contas.</td><td>Tecnologia, escritórios, serviços e benefícios a clientes.</td><td>Alta como canal B2B2C.</td></tr>
+    <tr><td>Correspondentes cambiais</td><td>Distribuição e originação de câmbio.</td><td>Nova receita e ampliação de portfólio.</td><td>Alta como canal, com controle de suitability.</td></tr>
+    <tr><td>Marketplaces e e-commerces</td><td>Pagamentos, câmbio e integrações.</td><td>Equipamentos, logística e oferta embarcada.</td><td>Alta em modelos integrados.</td></tr>
+    <tr><td>Pessoas físicas</td><td>Conta, câmbio e remessas.</td><td>Imóvel, automóvel e serviços.</td><td>Potencial, mas não parece ser o foco inicial.</td></tr>
+   </tbody>
+  </table>
+ </div>
+</section>
+
+<section class="section" id="credito">
+ <div class="head"><div class="eyebrow">06 · Natureza da exposição de crédito</div><h2>O perfil de risco tende a ser diferente de um banco de varejo massificado.</h2></div>
+ <div class="grid3">
+  <div class="card"><h3>Predominância empresarial</h3><p>Operações ligadas a comércio exterior, garantias, recebíveis e estruturas corporativas tendem a concentrar tickets maiores e menos tomadores.</p></div>
+  <div class="card"><h3>Mitigadores</h3><p>Garantias, fluxo de comércio exterior, recebíveis, contratos, avais e estruturas de curto prazo podem reduzir perda final, embora não eliminem default.</p></div>
+  <div class="card"><h3>Risco de concentração</h3><p>Uma carteira B2B pode apresentar baixa inadimplência média e, ainda assim, alta sensibilidade a poucos clientes, setores ou grupos econômicos.</p></div>
+ </div>
+ <div class="callout" style="margin-top:20px"><h3>Implicação</h3><p>Para entender a qualidade real da base, não basta perguntar “qual é a inadimplência?”. É necessário analisar atraso, ativos problemáticos, concentração, cobertura de provisão, garantias, perdas realizadas, renegociações e safras.</p></div>
+</section>
+
+<section class="section" id="inadimplencia">
+ <div class="head"><div class="eyebrow">07 · Inadimplência dos clientes</div><h2>Não foi localizado um índice público único e atual de inadimplência do Ouribank.</h2><p>O banco publica demonstrações financeiras e relatórios de Pilar 3. Entretanto, a página pública consultada lista, para 2025, OVA, CCA, CC1 e CC2. Essas tabelas não equivalem, por si só, aos relatórios CR1 e CR2 usados para detalhar qualidade creditícia e movimentação de ativos problemáticos.</p></div>
+ <div class="grid4">
+  <div class="card risk-box"><h3>Atraso acima de 90 dias</h3><p><span class="tag missing">Não identificado publicamente</span><br><br>Solicitar saldo vencido >90 dias dividido pela carteira de crédito bruta.</p></div>
+  <div class="card risk-box"><h3>Ativos problemáticos / NPL</h3><p><span class="tag missing">Não identificado publicamente</span><br><br>Solicitar conforme definição prudencial e reconciliação com Stage 3.</p></div>
+  <div class="card risk-box"><h3>Cobertura de provisão</h3><p><span class="tag missing">Não identificado publicamente</span><br><br>Provisão para perdas dividida por NPL ou carteira problemática.</p></div>
+  <div class="card risk-box"><h3>Perda líquida / write-off</h3><p><span class="tag missing">Não identificado publicamente</span><br><br>Baixas líquidas e recuperações por segmento e safra.</p></div>
+ </div>
+ <div class="table-wrap" style="margin-top:20px">
+  <table>
+   <thead><tr><th>Indicador necessário</th><th>Fórmula / leitura</th><th>Por que importa para o consórcio</th><th>Status</th></tr></thead>
+   <tbody>
+    <tr><td>Inadimplência 15, 30, 60 e 90+</td><td>Saldo ou clientes em atraso / carteira.</td><td>Ajuda a estimar disciplina de pagamento e selecionar públicos.</td><td><span class="tag request">Solicitar</span></td></tr>
+    <tr><td>NPL / ativos problemáticos</td><td>Exposições problemáticas / crédito total.</td><td>Mostra deterioração além do simples atraso.</td><td><span class="tag request">Solicitar</span></td></tr>
+    <tr><td>Cobertura</td><td>Provisão / NPL.</td><td>Indica capacidade de absorção das perdas esperadas.</td><td><span class="tag request">Solicitar</span></td></tr>
+    <tr><td>Concentração Top 10 / Top 20</td><td>Exposição dos maiores clientes / carteira.</td><td>Evita interpretar uma média baixa como risco pulverizado.</td><td><span class="tag request">Solicitar</span></td></tr>
+    <tr><td>Renegociações</td><td>Saldo renegociado e taxa de reincidência.</td><td>Identifica risco mascarado por reestruturações.</td><td><span class="tag request">Solicitar</span></td></tr>
+    <tr><td>Safras por produto</td><td>Curvas de atraso por mês de originação.</td><td>Permite selecionar os melhores clusters para o piloto.</td><td><span class="tag request">Solicitar</span></td></tr>
+   </tbody>
+  </table>
+ </div>
+ <div class="disclaimer" style="margin-top:18px">Conclusão responsável: não há base suficiente para afirmar que a inadimplência do Ouribank é baixa ou alta. O perfil, a rentabilidade, o rating e o índice de Basileia são sinais favoráveis de solidez, mas não substituem métricas específicas de qualidade da carteira.</div>
+</section>
+
+<section class="section" id="risco">
+ <div class="head"><div class="eyebrow">08 · Risco e governança</div><h2>A infraestrutura de controles é compatível com uma instituição financeira especializada.</h2></div>
+ <div class="grid3">
+  <div class="card"><h3>Publicações regulatórias</h3><p>Demonstrações BRGAAP, razão de alavancagem, Pilar 3, políticas e documentos de governança são disponibilizados publicamente.</p></div>
+  <div class="card"><h3>Políticas</h3><p>Compliance, PLD/FT, controles internos, segurança cibernética, auditoria, terceirização e privacidade.</p></div>
+  <div class="card"><h3>Experiência do cliente</h3><p>Os indicadores públicos recentes de reclamações mostram resposta integral, alta resolução e tempo médio curto, embora sejam fonte não oficial e cubram apenas usuários que reclamaram.</p></div>
+ </div>
+</section>
+
+<section class="section" id="consorcio">
+ <div class="head"><div class="eyebrow">09 · Como o consórcio entra no negócio</div><h2>Como produto de planejamento de ativos, não como substituto geral do crédito.</h2></div>
+ <div class="grid4">
+  <div class="card"><h3>CAPEX sem urgência</h3><p>Cliente que prevê compra futura de máquinas, frota ou imóvel pode formar poder de compra ao longo do tempo.</p></div>
+  <div class="card"><h3>Alternativa ao financiamento</h3><p>Útil quando o cliente aceita esperar contemplação e prefere não contratar dívida bancária imediata.</p></div>
+  <div class="card"><h3>Retenção</h3><p>Cria relacionamento de longo prazo e oportunidades futuras de conta, câmbio, seguros, garantias e serviços.</p></div>
+  <div class="card"><h3>Receita de distribuição</h3><p>Comissão contratual sem necessidade de administrar grupos ou imobilizar capital regulatório próprio.</p></div>
+ </div>
+ <div class="callout" style="margin-top:20px"><h3>Posicionamento recomendado</h3><p>“Planeje a aquisição do próximo ativo da sua empresa” é mais aderente ao Ouribank do que uma campanha varejista genérica de consórcio.</p></div>
+</section>
+
+<section class="section" id="segmentacao">
+ <div class="head"><div class="eyebrow">10 · Públicos prioritários</div><h2>O piloto deve começar por relacionamento e necessidade observável.</h2></div>
+ <div class="table-wrap">
+  <table>
+   <thead><tr><th>Prioridade</th><th>Público</th><th>Oferta</th><th>Racional</th><th>Cuidados</th></tr></thead>
+   <tbody>
+    <tr><td>1</td><td>Importadores recorrentes</td><td>Máquinas, equipamentos, pesados e imóveis.</td><td>Necessidade de CAPEX identificável e relacionamento transacional.</td><td>Não substituir FINIMP quando houver urgência.</td></tr>
+    <tr><td>2</td><td>Exportadores recorrentes</td><td>Máquinas, armazenagem, veículos e imóveis.</td><td>Expansão produtiva e receitas em moeda estrangeira.</td><td>Avaliar capacidade de parcela em reais.</td></tr>
+    <tr><td>3</td><td>Correspondentes cambiais</td><td>Portfólio multissegmento para clientes próprios.</td><td>Capilaridade e nova receita para o canal.</td><td>Treinamento, auditoria e controle de promessa.</td></tr>
+    <tr><td>4</td><td>Fintechs, remessadoras e marketplaces</td><td>Consórcio embarcado ou benefício B2B2C.</td><td>Integração tecnológica e distribuição digital.</td><td>LGPD, titularidade do lead e experiência.</td></tr>
+    <tr><td>5</td><td>Executivos e sócios de clientes PJ</td><td>Autos e imóveis.</td><td>Relacionamento de alta confiança.</td><td>Segregar PF e PJ e observar conflitos.</td></tr>
+   </tbody>
+  </table>
+ </div>
+</section>
+
+<section class="section" id="arquitetura">
+ <div class="head"><div class="eyebrow">11 · Arquitetura operacional</div><h2>Ouribank origina e distribui; EZZE/Âncora administra.</h2></div>
+ <div class="flow">
+  <div class="step"><b>1. Sinal</b><span>Necessidade futura detectada no relacionamento.</span></div>
+  <div class="step"><b>2. Oferta</b><span>Gerente, correspondente ou canal digital apresenta a solução.</span></div>
+  <div class="step"><b>3. Simulação</b><span>Crédito, prazo, parcela e regras do grupo.</span></div>
+  <div class="step"><b>4. Contratação</b><span>Proposta e documentos enviados à plataforma.</span></div>
+  <div class="step"><b>5. Administração</b><span>Âncora gerencia grupo, cobrança e assembleias.</span></div>
+  <div class="step"><b>6. Pós-venda</b><span>Ouribank acompanha relacionamento e oportunidades adicionais.</span></div>
+ </div>
+ <div class="grid3" style="margin-top:20px">
+  <div class="card"><h3>Ouribank</h3><p>Segmentação, originação, canais, dados, experiência, governança comercial e acompanhamento do cliente.</p></div>
+  <div class="card"><h3>EZZE/Âncora</h3><p>Produto, contratos, grupos, cobrança, assembleias, contemplações, restituições e backoffice regulado.</p></div>
+  <div class="card"><h3>Astrion</h3><p>Desenho do piloto, scripts, indicadores, monitoramento, governança e evolução da operação.</p></div>
+ </div>
+</section>
+
+<section class="section" id="economia">
+ <div class="head"><div class="eyebrow">12 · Economia estratégica</div><h2>O valor vai além da comissão, mas não inclui rendimentos do grupo.</h2></div>
+ <div class="grid3">
+  <div class="card"><h3>Comissão de distribuição</h3><p>Receita contratual vinculada às cotas vendidas e à persistência, sujeita a regras de chargeback.</p></div>
+  <div class="card"><h3>Relacionamento ampliado</h3><p>O cliente pode demandar conta, câmbio, pagamentos, garantias, seguros e assessoria durante o ciclo.</p></div>
+  <div class="card"><h3>Retenção do canal</h3><p>Correspondentes e parceiros passam a dispor de uma solução adicional, reforçando vínculo com o banco.</p></div>
+ </div>
+ <div class="disclaimer" style="margin-top:18px">Recursos e rendimentos dos grupos de consórcio pertencem ao patrimônio separado dos grupos e não constituem receita livre do Ouribank ou dos distribuidores.</div>
+</section>
+
+<section class="section" id="riscos">
+ <div class="head"><div class="eyebrow">13 · Riscos da parceria</div><h2>A operação reduz risco financeiro direto, mas cria riscos comerciais e reputacionais.</h2></div>
+ <div class="grid3">
+  <div class="card risk-box"><h3>Desalinhamento com o core</h3><p>Mitigação: começar por CAPEX empresarial e não por oferta massificada.</p></div>
+  <div class="card risk-box"><h3>Venda inadequada</h3><p>Mitigação: scripts, certificação, gravação, auditoria e proibição de promessa de contemplação.</p></div>
+  <div class="card risk-box"><h3>Dependência da administradora</h3><p>Mitigação: SLA, continuidade, auditoria, portabilidade operacional e cláusulas de saída.</p></div>
+  <div class="card risk-box"><h3>Dados e LGPD</h3><p>Mitigação: finalidade, base legal, minimização e contrato de tratamento de dados.</p></div>
+  <div class="card risk-box"><h3>Reputação</h3><p>Mitigação: governança conjunta de SAC, ouvidoria, reclamações e comunicação.</p></div>
+  <div class="card risk-box"><h3>Baixa escala</h3><p>Mitigação: piloto por clusters, metas por canal e encerramento caso não haja unit economics.</p></div>
+ </div>
+</section>
+
+<section class="section" id="diligencia">
+ <div class="head"><div class="eyebrow">14 · Dados que devem ser solicitados</div><h2>A decisão deve ser apoiada por uma diligência objetiva.</h2></div>
+ <div class="table-wrap">
+  <table>
+   <thead><tr><th>Bloco</th><th>Informação solicitada</th><th>Uso no projeto</th></tr></thead>
+   <tbody>
+    <tr><td>Base</td><td>Clientes ativos em 12 meses, PF/PJ, recorrência, produtos e consentimentos.</td><td>Determinar mercado acionável real.</td></tr>
+    <tr><td>Crédito</td><td>Carteira bruta, NPL, 90+, cobertura, renegociação, write-off, garantias e Top 20.</td><td>Compreender disciplina financeira dos clusters.</td></tr>
+    <tr><td>Canais</td><td>Correspondentes ativos, produção, distribuição geográfica e capacidade comercial.</td><td>Desenhar piloto e governança.</td></tr>
+    <tr><td>Clientes</td><td>Importadores/exportadores recorrentes, porte, setor, volume e produtos usados.</td><td>Definir segmentação e abordagem.</td></tr>
+    <tr><td>Tecnologia</td><td>APIs, SSO, KYC, CRM, trilhas de dados, segurança e disponibilidade.</td><td>Dimensionar integração.</td></tr>
+    <tr><td>EZZE/Âncora</td><td>Comissão, chargeback, produtos, grupos, SLAs, custo, exclusividade e suporte.</td><td>Validar viabilidade econômica e contratual.</td></tr>
+   </tbody>
+  </table>
+ </div>
+</section>
+
+<section class="section" id="roadmap">
+ <div class="head"><div class="eyebrow">15 · Roadmap recomendado</div><h2>Diagnóstico, piloto e escala condicionada.</h2></div>
+ <div class="grid2">
+  <div class="timeline">
+   <div class="t"><b>Fase 1 · Diligência</b><span>Base, carteira, inadimplência, canais, contratos, tecnologia e proposta comercial.</span></div>
+   <div class="t"><b>Fase 2 · Desenho do piloto</b><span>Importadores, exportadores e correspondentes selecionados; scripts e KPIs.</span></div>
+   <div class="t"><b>Fase 3 · Integração leve</b><span>Portal ou APIs, SSO, materiais, treinamento e homologação.</span></div>
+   <div class="t"><b>Fase 4 · Piloto de 90–180 dias</b><span>Conversão, persistência, reclamações, SLA, qualidade e receita.</span></div>
+   <div class="t"><b>Fase 5 · Escala</b><span>Expansão apenas se houver aderência ao core e economia comprovada.</span></div>
+  </div>
+  <div class="card"><h3>Critérios de aprovação</h3><p>Qualidade da base; baixa incidência de venda inadequada; persistência; aderência de clientes empresariais; capacidade do canal; estabilidade operacional; satisfação; comissão líquida; e ausência de conflito com crédito e câmbio.</p></div>
+ </div>
+</section>
+
+<section class="section" id="conclusao">
+ <div class="head"><div class="eyebrow">16 · Conclusão executiva</div><h2>O consórcio faz sentido como extensão consultiva do Ouribank, não como produto de massa.</h2><p>A instituição reúne escala, rentabilidade, especialização, tecnologia e uma base empresarial relevante. A oportunidade mais coerente está em ativos produtivos e patrimoniais de clientes recorrentes e no uso controlado da rede de correspondentes.</p></div>
+ <div class="grid3">
+  <div class="card"><h3>Aderência estratégica</h3><p>Alta em importadores, exportadores e canais B2B com necessidade futura de CAPEX.</p></div>
+  <div class="card"><h3>Inadimplência</h3><p>Não pode ser concluída com segurança sem dados internos de atraso, NPL, cobertura e concentração.</p></div>
+  <div class="card"><h3>Modelo recomendado</h3><p>White label plug-and-play, piloto restrito e expansão condicionada a indicadores observados.</p></div>
+ </div>
+ <div class="callout" style="margin-top:20px"><h3>Recomendação Astrion</h3><p>Avançar para diligência e desenho de piloto. Não utilizar os 850 mil clientes como base direta de projeção e não afirmar baixa inadimplência sem evidência quantitativa específica.</p></div>
+</section>
+
+<section class="section" id="fontes">
+ <div class="head"><div class="eyebrow">Fontes e limitações</div><h2>Base pública utilizada.</h2></div>
+ <div class="card sources">
+  <ul>
+   <li>Site institucional do Ouribank: posicionamento, produtos, públicos, clientes atendidos, operações, volume cambial, receitas, ativos, rating, ROAE, Basileia, correspondentes e colaboradores.</li>
+   <li>Página de documentos do Ouribank: BRGAAP 2025, razão de alavancagem, políticas e relatórios de Pilar 3.</li>
+   <li>Banco Central do Brasil: IF.Data e leiautes de Pilar 3, especialmente a diferenciação entre tabelas gerais e tabelas de qualidade de crédito CR1/CR2.</li>
+   <li>Reclame Aqui: apenas como sinal secundário de atendimento, não como fonte de qualidade de crédito.</li>
+  </ul>
+  <p><b>Limitação:</b> não foi possível extrair dos documentos públicos consultados um índice consolidado e atual de inadimplência, NPL, cobertura ou perda líquida específico do Ouribank. Esses dados foram corretamente classificados como itens de diligência.</p>
+ </div>
+</section>
+
+<section class="section footer">
+ <div class="brand" style="display:inline-block;min-width:310px;margin:0 0 20px">ASTRION<small>ASSESSORIA</small></div>
+ <h2>Entender a empresa antes de projetar a oportunidade.</h2>
+ <p>Astrion Assessoria · Diagnóstico Ouribank</p>
+</section>
+</main>
+</div>
+<script>
+const links=[...document.querySelectorAll("nav a")],sections=[...document.querySelectorAll("main section[id]")];
+const ob=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)links.forEach(a=>a.classList.toggle("active",a.getAttribute("href")==="#"+e.target.id))}),{rootMargin:"-35% 0px -55% 0px"});
+sections.forEach(s=>ob.observe(s));
+</script>
+</body>
+</html>
